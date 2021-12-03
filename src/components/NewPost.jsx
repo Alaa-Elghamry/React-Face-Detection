@@ -8,6 +8,7 @@ const NewPost = ({ image }) => {
     const [faces, setFaces] = useState([]);
     const [friends, setFriends] = useState([]);
   
+    // the reference = get Element by Id
     const imgRef = useRef();
     const canvasRef = useRef();
   
