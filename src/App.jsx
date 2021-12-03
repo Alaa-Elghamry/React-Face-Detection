@@ -7,7 +7,12 @@ function App() {
   const [file, setFile] = useState();
   const [image, setImage] = useState();
 
- 
+//  if there is a f photo (file) we want to display it
+// so we create a fake url & pass it to img src in NewPost
+
+useEffect(()=>{
+ file && console.log(URL.createObjectURL(file))
+},[file]);
 
   return (
     <div>
@@ -48,10 +53,13 @@ function App() {
                   src="https://d29fhpw069ctt2.cloudfront.net/icon/image/84451/preview.svg"
                   alt=""
                 />
+
+                {/* after clicking send we open img & detect all faces */}
                 <button>Send</button>
               </label>
-              
+
               <input
+              // set state hook
                 onChange={(e) => setFile(e.target.files[0])}
                 id="file"
                 style={{ display: "none" }}
