@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 
 const NewPost = ({ image }) => {
+    // pass the fake URL to image
     const { url, width, height } = image;
+
     const [faces, setFaces] = useState([]);
     const [friends, setFriends] = useState([]);
   
@@ -24,7 +26,7 @@ const NewPost = ({ image }) => {
       faces.map((face) => ctx.strokeRect(...face));
     };
   
-    
+
     // Load the face API Model detections
     useEffect(() => {
       const loadModels = () => {
