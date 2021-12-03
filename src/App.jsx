@@ -5,13 +5,27 @@ import NewPost from "./components/NewPost";
 
 function App() {
   const [file, setFile] = useState();
+  // create img to store our file
   const [image, setImage] = useState();
 
 //  if there is a f photo (file) we want to display it
 // so we create a fake url & pass it to img src in NewPost
 
 useEffect(()=>{
- file && console.log(URL.createObjectURL(file))
+  const getImage = () => {
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = () => {
+      setImage({
+        url: img.src,
+        width: img.width,
+        height: img.height,
+      });
+    };
+  };
+  file && getImage();
+  
+
 },[file]);
 
   return (
