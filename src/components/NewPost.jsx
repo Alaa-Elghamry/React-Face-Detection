@@ -17,6 +17,7 @@ const NewPost = ({ image }) => {
         imgRef.current,
         new faceapi.TinyFaceDetectorOptions()
       );
+    //   get faces then map through this array and set values to face.box
       setFaces(detections.map((d) => Object.values(d.box)));
     };
   
@@ -55,11 +56,14 @@ const NewPost = ({ image }) => {
         <div className="left" style={{ width, height }}>
           <img ref={imgRef} crossOrigin="anonymous" src={url} alt="" />
           <canvas
+        //   on hover draw a box 
             onMouseEnter={enter}
             ref={canvasRef}
             width={width}
             height={height}
           />
+          
+          {/* map through the faces using index then tag a friend */}
           {faces.map((face, i) => (
             <input
               name={`input${i}`}
