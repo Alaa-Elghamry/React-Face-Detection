@@ -17,17 +17,21 @@ function App() {
       ) : (
         <div className="newPostCard">
           <div className="addPost">
+           
             <img
               src="https://images.pexels.com/photos/9371782/pexels-photo-9371782.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               alt=""
               className="avatar"
             />
+
+            
             <div className="postForm">
               <input
                 type="text"
                 placeholder="What's on your mind?"
                 className="postInput"
               />
+              {/* lable is to select a file */}
               <label htmlFor="file">
                 <img
                   className="addImg"
@@ -46,6 +50,7 @@ function App() {
                 />
                 <button>Send</button>
               </label>
+              
               <input
                 onChange={(e) => setFile(e.target.files[0])}
                 id="file"
