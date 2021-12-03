@@ -31,6 +31,8 @@ useEffect(()=>{
   return (
     <div>
       <Navbar />
+      {/* if there's img call NewPost comp. & pass this img */}
+      
       {image ? (
         <NewPost image={image} />
       ) : (
